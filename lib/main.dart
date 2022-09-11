@@ -1,26 +1,24 @@
+import 'dart:ui';
+import 'package:booking_page/bookingpageui.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_doctor_app/doctor_app_theme.dart';
-
-import 'screens/doctor_detail_screen.dart';
-import 'screens/home_screen.dart';
 
 void main() {
-  runApp(const App());
+  runApp(MyApp());
 }
 
-class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => AppState();
+}
 
+class AppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: DoctorAppTheme.lightTheme,
-      initialRoute: '/',
-      routes: {
-        '/': (context) => const HomeScreen(),
-        '/doctor_details': (context) => const DoctorDetailScreen(),
-      },
+      theme: ThemeData(
+        primaryColor: Color(0xff053F5E),
+      ),
+      home: DoctorDetailPage(),
     );
   }
 }
